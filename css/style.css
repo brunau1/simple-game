@@ -1,0 +1,33 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+canvas{
+	border: 1px solid red;
+	margin: auto;
+}
+
+#alingn-canvas{
+	display: flex;
+	align-items: center;
+}
+#panel{
+	position: fixed;
+	border: 0.5px solid red;
+	width: 16%;
+	border-radius: 4px;
+}
+#endGame{
+	font-size: 1.5em;
+	color: blue;
+	text-align: center;
+}
+.card{
+	font-size: 14px;
+	color: white;
+	background-color: #220058cc;
+	padding: 0;
+}
+.list-group-item{
+	background-color: #0202024a;
+}

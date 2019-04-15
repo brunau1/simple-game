@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple game</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="javascript/createObjects.js"></script>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="panel">
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title">Game Information</h5>
+				<div id="selectBack">
+					<p>Select the background:</p>
+					<select id="selectBackground">
+						<option>Select</option>
+						<option value="1">background 1</option>
+						<option value="2">background 2</option>
+					</select>
+					<p></p>
+					<button class="btn" onclick="getElements()">Start Game</button>
+				</div>
+			</div>
+			<ul class="list-group list-group-flush" hidden="true" id="players">
+				<li ><h5 class="card-text">Score:</h5></li>
+				<li class="list-group-item"><span id="player1">Player 1</span></li>
+				<li class="list-group-item"><span id="player2">Player 2</span></li>
+			</ul>
+		</div>
+		<div id="endGame">
+			<!-- venceu!! -->
+		</div>
+	</div>
+	<div id="alingn-canvas">
+		<canvas id="gameCanvas"></canvas>
+	</div>
+	<script type="text/javascript" src="javascript/game.js"></script>
+
+	<script type="text/javascript">
+		function getElements() {
+			let backOption = document.getElementById('selectBackground').value
+			gameStart(backOption)
+		}
+	</script>
+
+</body>
+</html>
