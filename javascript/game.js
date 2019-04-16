@@ -24,7 +24,7 @@ function initializeObjects(backOption, names, imgTank){
 	}
 }
 
-function gameStart(backOption, names, imgTank){
+function gameInit(backOption, names, imgTank){
 
 	document.getElementById('players').hidden = false
 	document.getElementById('simpleForm').hidden = true

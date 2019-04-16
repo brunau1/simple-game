@@ -71,12 +71,13 @@
 			names.push(document.getElementById('name2').value)
 			tanks.push(document.getElementById('selectTankP1').value)
 			tanks.push(document.getElementById('selectTankP2').value)
-			gameStart(backOption, names, tanks)
+
+			gameInit(backOption, names, tanks)
 		}
 
 		function hideOption(){
-			var option = document.getElementById('selectTankP1')
-			var option2 = document.getElementById('selectTankP2')
+			let option = document.getElementById('selectTankP1')
+			let option2 = document.getElementById('selectTankP2')
 
 			for(i in option){
 				if(i > 0)
