@@ -4,6 +4,7 @@
 	<title>Simple game</title>
 	<meta charset="utf-8">
 	<script type="text/javascript" src="javascript/createObjects.js"></script>
+	<script type="text/javascript" src="javascript/updateObjects.js"></script>
 	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -16,8 +17,8 @@
 	<div id="panel">
 		<div class="card">
 			<div class="card-body">
-				<h5 class="card-title">Game Information</h5>
-				<div id="selectBack">
+				<h5 class="card-title">Game Panel</h5>
+				<div id="simpleForm">
 					<p>Select the background:</p>
 					<select id="selectBackground">
 						<option>Select</option>
@@ -25,13 +26,13 @@
 						<option value="2">background 2</option>
 					</select>
 					<p></p>
+					<input class="form-control" type="text" id="name1" placeholder="name player1"><br>
+					<input class="form-control" type="text" id="name2" placeholder="name player2">
+					<p></p>
 					<button class="btn" onclick="getElements()">Start Game</button>
 				</div>
 			</div>
 			<ul class="list-group list-group-flush" hidden="true" id="players">
-				<li ><h5 class="card-text">Score:</h5></li>
-				<li class="list-group-item"><span id="player1">Player 1</span></li>
-				<li class="list-group-item"><span id="player2">Player 2</span></li>
 			</ul>
 		</div>
 		<div id="endGame">
@@ -46,7 +47,9 @@
 	<script type="text/javascript">
 		function getElements() {
 			let backOption = document.getElementById('selectBackground').value
-			gameStart(backOption)
+			let name1 = document.getElementById('name1').value
+			let name2 = document.getElementById('name2').value
+			gameStart(backOption, name1, name2)
 		}
 	</script>
 

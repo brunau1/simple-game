@@ -27,8 +27,8 @@ function createPlayer(){
 			return this
 		},
 
-		withPontuation: function ( pontuation ) {
-			this.pontuation = pontuation
+		withLife: function ( life ) {
+			this.life = life
 			return this
 		},
 

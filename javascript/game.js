@@ -1,9 +1,8 @@
 let screen
 let battlefield
-let player1
-let player2
+let players = []
 
-function initializeObjects(backOption){
+function initializeObjects(backOption, name1, name2){
 	screen = createCanvas(900,600)
 
 	if (backOption == 1)
@@ -12,16 +11,24 @@ function initializeObjects(backOption){
 	battlefield = createBattleField().withImage("images/background2.png")
 	else
 	battlefield = createBattleField().withImage("images/background1.png")
+
+	players.push(createPlayer().withName(name1).withLife(1000))
+	players.push(createPlayer().withName(name2).withLife(1000))
 }
 
-function gameStart(backOption){
+function gameStart(backOption, name1, name2){
 
 	document.getElementById('players').hidden = false
-	document.getElementById('selectBack').hidden = true
+	document.getElementById('simpleForm').hidden = true
 
-	initializeObjects(backOption)
-
+	if (name1 && name2)
+	initializeObjects(backOption, name1, name2)
+	else
+	initializeObjects(backOption, 'player1', 'player2')
+	
 	battlefield.background.onload = function(){
 		screen.ctx.drawImage(battlefield.background,0,0);   
 	}
+
+	updatePanelData(players)
 }
