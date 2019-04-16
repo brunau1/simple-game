@@ -57,9 +57,9 @@ function setTankImageSrc(imgTank, srcTank){
 function setBackground(backOption) {
 
 	if (backOption == 1)
-		battlefield = createBattleField().withImage("images/backgrounds/background1.png")
+		battlefield = createBattleField().withImage("images/backgrounds/back1.png")
 	else if (backOption == 2)
-		battlefield = createBattleField().withImage("images/backgrounds/background2.png")
+		battlefield = createBattleField().withImage("images/backgrounds/back2.png")
 	else
 		battlefield = createBattleField().withImage("images/backgrounds/background1.png")
 }
