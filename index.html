@@ -20,14 +20,32 @@
 				<h5 class="card-title">Game Panel</h5>
 				<div id="simpleForm">
 					<p>Select the background:</p>
-					<select id="selectBackground">
+					<select id="selectBackground" class="form-control form-control-sm">
 						<option>Select</option>
 						<option value="1">background 1</option>
 						<option value="2">background 2</option>
 					</select>
 					<p></p>
+					<p>Insert the name of the players:</p>
 					<input class="form-control" type="text" id="name1" placeholder="name player1"><br>
 					<input class="form-control" type="text" id="name2" placeholder="name player2">
+					<p></p>
+					<p>Select the tank:</p>
+					<select id="selectTankP1" class="form-control form-control-sm" onchange="hideOption()">
+						<option>Select tank p1</option>
+						<option value="1">tank 1</option>
+						<option value="2">tank 2</option>
+						<option value="3">tank 3</option>
+						<option value="4">tank 4</option>
+					</select>
+					<p></p>
+					<select id="selectTankP2" class="form-control form-control-sm">
+						<option>Select tank p2</option>
+						<option value="1">tank 1</option>
+						<option value="2">tank 2</option>
+						<option value="3">tank 3</option>
+						<option value="4">tank 4</option>
+					</select>
 					<p></p>
 					<button class="btn" onclick="getElements()">Start Game</button>
 				</div>
@@ -47,9 +65,26 @@
 	<script type="text/javascript">
 		function getElements() {
 			let backOption = document.getElementById('selectBackground').value
-			let name1 = document.getElementById('name1').value
-			let name2 = document.getElementById('name2').value
-			gameStart(backOption, name1, name2)
+			let names = []
+			let tanks = []
+			names.push(document.getElementById('name1').value)
+			names.push(document.getElementById('name2').value)
+			tanks.push(document.getElementById('selectTankP1').value)
+			tanks.push(document.getElementById('selectTankP2').value)
+			gameStart(backOption, names, tanks)
+		}
+
+		function hideOption(){
+			var option = document.getElementById('selectTankP1')
+			var option2 = document.getElementById('selectTankP2')
+
+			for(i in option){
+				if(i > 0)
+				if (option.value == option2[i].value) {
+					option2[i].hidden = true
+				}
+				else{ option2[i].hidden = false }
+			}
 		}
 	</script>
 
