@@ -42,24 +42,24 @@ function setTankImageSrc(imgTank, srcTank){
 
 	for(i in imgTank){
 		if (imgTank[i] == 1)
-			srcTank.push("images/tank1.png")
+			srcTank.push("images/tanks/tank1.png")
 		else if(imgTank[i] == 2)
-			srcTank.push("images/tank2.png")
+			srcTank.push("images/tanks/tank2.png")
 		else if(imgTank[i] == 3)
-			srcTank.push("images/tank3.png")
+			srcTank.push("images/tanks/tank3.png")
 		else if(imgTank[i] == 4)
-			srcTank.push("images/tank4.png")
+			srcTank.push("images/tanks/tank4.png")
 		else
-			srcTank.push("images/tank1.png")
+			srcTank.push("images/tanks/tank1.png")
 	}
 }
 
 function setBackground(backOption) {
 
 	if (backOption == 1)
-		battlefield = createBattleField().withImage("images/background1.png")
-	if (backOption == 2)
-		battlefield = createBattleField().withImage("images/background2.png")
+		battlefield = createBattleField().withImage("images/backgrounds/background1.png")
+	else if (backOption == 2)
+		battlefield = createBattleField().withImage("images/backgrounds/background2.png")
 	else
-		battlefield = createBattleField().withImage("images/background1.png")
+		battlefield = createBattleField().withImage("images/backgrounds/background1.png")
 }
