@@ -10,6 +10,45 @@ function createCanvas(canvasWidth, canvasHeight){
 	return {canvas, ctx}
 }
 
+function createBattleField(){
+	return{
+		withImage: function ( background ){
+			this.background = new Image()
+			this.background.src  = background
+			return this
+		}
+	}
+}
+
+function createPlayer(){
+	return{
+		withName: function ( name ){
+			this.name = name
+			return this
+		},
+
+		withPontuation: function ( pontuation ) {
+			this.pontuation = pontuation
+			return this
+		},
+
+		withTank: function ( tank ){
+			this.tank = tank
+			return this
+		}
+	}
+}
+
+function createTank(){
+	return{
+		withImage: function ( image ){
+			this.sprite = new Image()
+			this.sprite.src = image
+			return this
+		}
+	}
+}
+
 function createCharacter(){
 	return {
 		withImageRun: function ( imgSrc ) {
