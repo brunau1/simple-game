@@ -11,8 +11,19 @@ function initializeObjects(backOption, names, imgTank){
 	
 	setTankImageSrc(imgTank, srcTank)
 
-	tanks.push(createTank().withImage(srcTank[0]))
-	tanks.push(createTank().withImage(srcTank[1]))
+	tanks.push(createTank()
+		.withImage(srcTank[0])
+		.withRectDimensions(40,68)
+		.withMoveDirection(1,0)
+		.withCoordinates(0,0)
+		.withSpeed(15))
+
+	tanks.push(createTank()
+		.withImage(srcTank[1])
+		.withRectDimensions(40,68)
+		.withMoveDirection(1,0)
+		.withCoordinates(0,500)
+		.withSpeed(15))
 
 	let index = 1
 	for(i in names){
@@ -32,7 +43,15 @@ function gameInit(backOption, names, imgTank){
 	initializeObjects(backOption, names, imgTank)
 	
 	battlefield.background.onload = function(){
-		screen.ctx.drawImage(battlefield.background,0,0);   
+		let pattern = screen.ctx.createPattern(battlefield.background, "repeat");
+
+		screen.ctx.beginPath()
+		screen.ctx.fillStyle = pattern
+		screen.ctx.fillRect(0,0,screen.canvas.width, screen.canvas.height)
+		screen.ctx.closePath()
+
+		drawTank(tanks[0],screen.ctx)
+		drawTank(tanks[1],screen.ctx)
 	}
 
 	updatePanelData(players)
@@ -57,9 +76,9 @@ function setTankImageSrc(imgTank, srcTank){
 function setBackground(backOption) {
 
 	if (backOption == 1)
-		battlefield = createBattleField().withImage("images/backgrounds/back1.png")
+		battlefield = createBattleField().withImage("images/backgrounds/background1.png")
 	else if (backOption == 2)
-		battlefield = createBattleField().withImage("images/backgrounds/back2.png")
+		battlefield = createBattleField().withImage("images/backgrounds/background2.png")
 	else
 		battlefield = createBattleField().withImage("images/backgrounds/background1.png")
 }

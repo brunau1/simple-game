@@ -45,50 +45,25 @@ function createTank(){
 			this.sprite = new Image()
 			this.sprite.src = image
 			return this
-		}
-	}
-}
-
-function createCharacter(){
-	return {
-		withImageRun: function ( imgSrc ) {
-			this.characterRun = new Image()
-			this.characterRun.src = imgSrc
+		},
+		withRectDimensions: function ( width, height ) {
+			this.width = width
+			this.height = height
 			return this
 		},
-		withImageDimensions: function ( imgWidth, imgHeight ) {
-			this.imgWidth = imgWidth
-			this.imgHeight = imgHeight
+		withMoveDirection: function( moveX, moveY ) {
+			this.moveDirX = moveX
+			this.moveDirY = moveY
 			return this
 		},
-		withSpriteDimensions: function ( imgWidth, imgHeight, rows, cols ) {
-			this.spriteWidth = imgWidth/cols
-			this.spriteHeight = imgHeight/rows
-			return this
-		},
-		withMoveState: function( moveState ) {
-			this.moveState = moveState
-			return this
-		},
-		withFrame: function( frameCount, currentFrame ) {
-			this.frameCount = frameCount
-			this.currentFrame = currentFrame
-			return this
-		},
-		withCoordinates: function( x, y, srcX, srcY ) {
+		withCoordinates: function( x, y ) {
 			this.x = x
 			this.y = y
-			this.srcX = srcX
-			this.srcY = srcY
 			return this
 		},
 		withSpeed: function( speed ) {
 			this.speed = speed
 			return this
 		},
-		withId: function( id ){
-			this.id = id
-			return this
-		}
 	}
 }
