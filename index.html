@@ -3,9 +3,10 @@
 <head>
 	<title>Simple game</title>
 	<meta charset="utf-8">
-	<script type="text/javascript" src="javascript/createObjects.js"></script>
-	<script type="text/javascript" src="javascript/updateObjects.js"></script>
-	<script type="text/javascript" src="javascript/getGameInputs.js"></script>
+	<script type="text/javascript" src="javascript/constVariables.js"></script>
+	<script type="text/javascript" src="javascript/controller.js"></script>
+	<script type="text/javascript" src="javascript/model.js"></script>
+	<script type="text/javascript" src="javascript/display.js"></script>
 	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -15,7 +16,7 @@
 </head>
 <body>
 	<!-- tank game -->
-	<div id="panel">
+	<!-- <div id="panel">
 		<div class="card">
 			<div class="card-body">
 				<h5 class="card-title">Game Panel</h5>
@@ -54,16 +55,16 @@
 			<ul class="list-group list-group-flush" hidden="true" id="players">
 			</ul>
 		</div>
-		<div id="endGame">
+		<div id="endGame"> -->
 			<!-- venceu!! -->
-		</div>
-	</div>
+		<!--</div>
+	</div>-->
 	<div id="alingn-canvas">
 		<canvas id="gameCanvas"></canvas>
 	</div>
 	<script type="text/javascript" src="javascript/game.js"></script>
 
-	<script type="text/javascript">
+	<!--<script type="text/javascript">
 
 		function hideOption(){
 			let option = document.getElementById('selectTankP1')
@@ -77,7 +78,7 @@
 				else{ option2[i].hidden = false }
 			}
 		}
-	</script>
+	</script>-->
 
 </body>
 </html>
