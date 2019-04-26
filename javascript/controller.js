@@ -3,9 +3,9 @@ const ARROW_DOWN = 40
 const ARROW_RIGHT = 39
 const ARROW_LEFT = 37
 
-function getInput(player) {
+var getInput = ( player ) => {
 	if (player.id == 1) {
-		document.addEventListener('keydown', function(event){
+		window.addEventListener('keydown', function(event){
 			let keyState = (event.type == "keydown") ? true : false
 
 			switch(String.fromCharCode(event.keyCode)){
@@ -23,7 +23,7 @@ function getInput(player) {
 				break;
 			}
 		})
-		document.addEventListener('keyup', function(event){
+		window.addEventListener('keyup', function(event){
 			let keyState = (event.type == "keydown") ? true : false
 
 			player.dir.UP = player.dir.DOWN = player.dir.LEFT = player.dir.RIGHT = keyState
@@ -32,7 +32,7 @@ function getInput(player) {
 	}
 
 	if (player.id == 2) {
-		document.addEventListener('keydown', function(event){
+		window.addEventListener('keydown', function(event){
 			let keyState = (event.type == "keydown") ? true : false
 
 			switch (event.keyCode) {
@@ -50,7 +50,7 @@ function getInput(player) {
 				break;
 			}
 		})
-		document.addEventListener('keyup', function(event){
+		window.addEventListener('keyup', function(event){
 			let keyState = (event.type == "keydown") ? true : false
 
 			player.dir.UP = player.dir.DOWN = player.dir.LEFT = player.dir.RIGHT = keyState

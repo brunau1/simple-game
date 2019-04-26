@@ -1,4 +1,4 @@
-function updatePanelData(players){
+var updatePanelData = (players) => {
 	const dataAreaPanel = document.getElementById('players')
 	let liHtml = `<li><h5 class="card-text">Life:</h5></li>`
 
@@ -11,6 +11,6 @@ function updatePanelData(players){
 	dataAreaPanel.innerHTML = liHtml
 }
 
-draw = ( player ) => {
+var draw = ( player ) => {
 
 }

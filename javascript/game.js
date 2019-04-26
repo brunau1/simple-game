@@ -3,7 +3,7 @@ const screen = createCanvas(900,600)
 let players = []
 
 
-gameInit = () =>{
+var gameInit = () =>{
 
 	document.getElementById('players').hidden = false
 	document.getElementById('simpleForm').hidden = true
@@ -19,28 +19,42 @@ gameInit = () =>{
 
 	let index = 1
 	for(i in names){
-		if (!names[i]) {
+		if (!names[i]) 
 			names[i] = `player ${index}`
-		}
-		players.push(createPlayer()
-			.withName(names[i])
-			.withLife(1000)
-			.withImage(setTankImageSrc(imgTank[i]))
-			.withDimensions(40, 68)
-			.withPosition(0,0,0,0)
-			.withId(index))
-
+		
 		index++
 	}
 
+	players.push(createPlayer()
+			.withName(names[0])
+			.withLife(1000)
+			.withImage(setTankImageSrc(imgTank[0]))
+			.withDimensions(40, 68)
+			.withPosition(0,0,0,0)
+			.withId(1))
+	players.push(createPlayer()
+			.withName(names[1])
+			.withLife(1000)
+			.withImage(setTankImageSrc(imgTank[1]))
+			.withDimensions(40, 68)
+			.withPosition(800,500,0,0)
+			.withId(2))
+
 	updatePanelData(players)
+
+	setInterval(loop, 70)
 }
 
-loop = () => {
-	
+var loop = () => {
+
+	getInput(players[0])
+	getInput(players[1])
+
+	players[0].move()
+	players[1].move()
 }
 
-setTankImageSrc = ( imgTank ) =>{
+var setTankImageSrc = ( imgTank ) =>{
 
 	if (imgTank == 1)
 		return "images/tanks/tank1.png"
