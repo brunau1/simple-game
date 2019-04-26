@@ -67,11 +67,11 @@ function createPlayer(){
 			if (dir.DOWN)
 				yVelocity += 10
 
-			rectangle.yVelocity += 1.5
-			rectangle.x += rectangle.xVelocity
-			rectangle.y += rectangle.yVelocity
-			rectangle.xVelocity *= 0.9
-			rectangle.yVelocity *= 0.9
+			yVelocity += 1.5
+			x += xVelocity
+			y += yVelocity
+			xVelocity *= 0.9
+			yVelocity *= 0.9
 
 			verifyCanvasRanges()
 		},
