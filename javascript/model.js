@@ -1,11 +1,11 @@
 function createCanvas(canvasWidth, canvasHeight){
 
-	const canvas = document.getElementById('gameCanvas');
+	const canvas = document.getElementById('gameCanvas')
 
-	canvas.width = canvasWidth;
-	canvas.height = canvasHeight;
+	canvas.width = canvasWidth
+	canvas.height = canvasHeight
 
-	const ctx = canvas.getContext("2d");
+	const ctx = canvas.getContext("2d")
 
 	return {canvas, ctx}
 }
@@ -20,7 +20,7 @@ function createPlayer(){
 
 	return{
 		dir,
-		
+
 		withName: function ( name ){
 			this.name = name
 			return this
@@ -55,5 +55,43 @@ function createPlayer(){
 			this.id = id
 			return this
 		},
+
+		move: function () {
+
+			if (dir.LEFT)
+				xVelocity -= 10
+			if (dir.RIGHT)
+				xVelocity += 10
+			if (dir.UP)
+				yVelocity -= 10
+			if (dir.DOWN)
+				yVelocity += 10
+
+			rectangle.yVelocity += 1.5
+			rectangle.x += rectangle.xVelocity
+			rectangle.y += rectangle.yVelocity
+			rectangle.xVelocity *= 0.9
+			rectangle.yVelocity *= 0.9
+
+			verifyCanvasRanges()
+		},
+
+		verifyCanvasRanges: function () {
+
+			if (x >= 900 - width) {
+				x = 900 - width
+				console.log("X: " + x)
+			}
+			else if (x <= 0) {
+				x = 0
+				console.log("X: " + x)
+			}
+			if (y >= 600 - height) {
+				y = 600 - height
+			}
+			else if (y <= 0) {
+				y = 0
+			}
+		}
 	}
 }

@@ -36,6 +36,10 @@ gameInit = () =>{
 	updatePanelData(players)
 }
 
+loop = () => {
+	
+}
+
 setTankImageSrc = ( imgTank ) =>{
 
 	if (imgTank == 1)

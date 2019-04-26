@@ -11,6 +11,6 @@ function updatePanelData(players){
 	dataAreaPanel.innerHTML = liHtml
 }
 
-draw = (player) =>{
+draw = ( player ) => {
 
 }
