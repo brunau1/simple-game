@@ -51,7 +51,7 @@ var loop = () => {
 	getInput(players[0])
 	getInput(players[1])
 
-	console.clear()
+	//console.clear()
 
 	move(players[0])
 	move(players[1])

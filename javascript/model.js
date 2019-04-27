@@ -61,13 +61,13 @@ function createPlayer(){
 function move ( player ) {
 
 	if (player.dir.LEFT)
-		player.xVelocity -= 0.5
+		player.xVelocity = -1
 	if (player.dir.RIGHT)
-		player.xVelocity += 0.5
+		player.xVelocity = 1
 	if (player.dir.UP)
-		player.yVelocity -= 0.5
+		player.yVelocity = -1
 	if (player.dir.DOWN)
-		player.yVelocity += 0.5
+		player.yVelocity = 1
 
 	player.x += player.xVelocity
 	player.y += player.yVelocity
