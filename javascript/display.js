@@ -12,5 +12,6 @@ var updatePanelData = (players) => {
 }
 
 var draw = ( ctx, player ) => {
-	
+	ctx.clearRect(player.x, player.y, player.width, player.height)
+	ctx.drawImage(player.sprite, player.x, player.y, player.width, player.height);
 }

@@ -24,14 +24,13 @@ var gameInit = () =>{
 		
 		index++
 	}
-	987985748
 
 	players.push(createPlayer()
 			.withName(names[0])
 			.withLife(1000)
 			.withImage(setTankImageSrc(imgTank[0]))
 			.withDimensions(40, 68)
-			.withPosition(0,0,0,0)
+			.withPosition(50,50,0,0)
 			.withId(1))
 	players.push(createPlayer()
 			.withName(names[1])
@@ -53,8 +52,7 @@ var loop = () => {
 
 	//console.clear()
 
-	move(players[0])
-	move(players[1])
+	move(players)
 
 	draw(screen.ctx, players[0])
 	draw(screen.ctx, players[1])
