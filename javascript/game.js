@@ -24,6 +24,7 @@ var gameInit = () =>{
 		
 		index++
 	}
+	987985748
 
 	players.push(createPlayer()
 			.withName(names[0])
@@ -50,8 +51,15 @@ var loop = () => {
 	getInput(players[0])
 	getInput(players[1])
 
-	players[0].move()
-	players[1].move()
+	console.clear()
+
+	move(players[0])
+	move(players[1])
+
+	draw(screen.ctx, players[0])
+	draw(screen.ctx, players[1])
+
+	updatePanelData(players)
 }
 
 var setTankImageSrc = ( imgTank ) =>{

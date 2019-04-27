@@ -54,44 +54,44 @@ function createPlayer(){
 		withId: function( id ){
 			this.id = id
 			return this
-		},
-
-		move: function () {
-
-			if (dir.LEFT)
-				xVelocity -= 10
-			if (dir.RIGHT)
-				xVelocity += 10
-			if (dir.UP)
-				yVelocity -= 10
-			if (dir.DOWN)
-				yVelocity += 10
-
-			yVelocity += 1.5
-			x += xVelocity
-			y += yVelocity
-			xVelocity *= 0.9
-			yVelocity *= 0.9
-
-			verifyCanvasRanges()
-		},
-
-		verifyCanvasRanges: function () {
-
-			if (x >= 900 - width) {
-				x = 900 - width
-				console.log("X: " + x)
-			}
-			else if (x <= 0) {
-				x = 0
-				console.log("X: " + x)
-			}
-			if (y >= 600 - height) {
-				y = 600 - height
-			}
-			else if (y <= 0) {
-				y = 0
-			}
 		}
+	}
+}
+
+function move ( player ) {
+
+	if (player.dir.LEFT)
+		player.xVelocity -= 5
+	if (player.dir.RIGHT)
+		player.xVelocity += 5
+	if (player.dir.UP)
+		player.yVelocity -= 5
+	if (player.dir.DOWN)
+		player.yVelocity += 5
+
+	player.x += player.xVelocity
+	player.y += player.yVelocity
+	player.xVelocity *= 0.9
+	player.yVelocity *= 0.9
+
+	console.log("X",player.x)
+	console.log("Y",player.y)
+
+	verifyCanvasRanges( player )
+}
+
+function verifyCanvasRanges ( player ) {
+
+	if (player.x >= 900 - player.width) {
+		player.x = 900 - player.width
+	}
+	else if (player.x <= 0) {
+		player.x = 0
+	}
+	if (player.y >= 600 - player.height) {
+		player.y = 600 - player.height
+	}
+	else if (player.y <= 0) {
+		player.y = 0
 	}
 }
