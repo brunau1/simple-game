@@ -76,6 +76,7 @@ function move(players) {
 		players[i].xVelocity *= 0
 		players[i].yVelocity *= 0
 
+		console.log("nome:", players[i].name)
 		console.log("X", players[i].x)
 		console.log("Y", players[i].y)
 
@@ -101,9 +102,13 @@ function verifyCanvasRanges(player) {
 }
 
 function verifyColision(players) {
+	//left and top
+	if ( (((players[0].x >= players[1].x - players[1].width) && (players[0].x <= players[1].x)) &&
+	((players[0].y >= players[1].y - players[1].height) && (players[0].y <= players[1].y + players[1].height - 2))) ||
+	//right and down
+	(((players[0].x - players[0].width >= players[1].x) && (players[0].x >= players[1].x)) &&
+	((players[0].y >= players[1].y + players[1].height - 2) && (players[0].y >= players[1].y)))) {
 
-	if (players[0].x - players[0].width == players[1].x + players[1].width &&
-		players[0].y + players[0].height == players[1].y + players[1].height) {
-		players[1].x -= players[1].width
+		players[0].x = players[1].x - players[1].width
 	}
 }
